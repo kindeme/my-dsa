@@ -1,11 +1,11 @@
 // Tree Traversal give an array back
-// Breath First Search search from the top
+//Breath First Search start insertion in the array from from the top of the three
 
-// Depht first searh start from the bottom
+// Deep first search start insertion in the array from the bottom of the three
 
 class Node {
 	constructor(value) {
-		this.right = value;
+		this.value = value;
 		this.left = null;
 		this.right = null;
 	}
@@ -36,10 +36,10 @@ class BST {
 
 	DFSPreOrder() {
 		let results = [];
-		function travers(currentNode) {
+		function traverse(currentNode) {
 			results.push(currentNode.value);
-			if (currentNode.left) travers(currentNode.left);
-			if (currentNode.right) travers(currentNode.right);
+			if (currentNode.left) traverse(currentNode.left);
+			if (currentNode.right) traverse(currentNode.right);
 		}
 		traverse(this.root);
 		return results;
@@ -49,9 +49,9 @@ class BST {
 
 	DFSPPostOrder() {
 		let results = [];
-		function travers(currentNode) {
-			if (currentNode.left) travers(currentNode.left);
-			if (currentNode.right) travers(currentNode.right);
+		function traverse(currentNode) {
+			if (currentNode.left) traverse(currentNode.left);
+			if (currentNode.right) traverse(currentNode.right);
 			results.push(currentNode.value);
 		}
 		traverse(this.root);
@@ -59,13 +59,13 @@ class BST {
 	}
 
 	//in InOrder we write the root of three in the array first
-	//  DFS inorder lower to higher
+	//  DFS in order lower to higher
 	DFSInOrder() {
 		let results = [];
-		function travers(currentNode) {
-			if (currentNode.left) travers(currentNode.left);
+		function traverse(currentNode) {
+			if (currentNode.left) traverse(currentNode.left);
 			results.push(currentNode.value);
-			if (currentNode.right) travers(currentNode.right);
+			if (currentNode.right) traverse(currentNode.right);
 		}
 		traverse(this.root);
 		return results;

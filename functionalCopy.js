@@ -18,10 +18,10 @@ function map(element, callback) {
 
 // filter
 function isEvens(num) {
-	return num % 2 ? "is not even" : "is even";
+	return num % 2 ? false : true;
 }
 function isOdds(num) {
-	return num % 2 ? "is Odd" : "is not odd";
+	return num % 2 ? true : false;
 }
 function filter(arr, callback) {
 	let results = [];
@@ -69,16 +69,16 @@ function sum(arr) {
 
 function every(arr, func) {
 	for (let i = 0; i < arr.length; i++) {
-		if (func(arr[i])) return true;
+		if (!func(arr[i])) return false;
 	}
-	return false;
+	return true;
 }
 
 // some
 function some(arr, func) {
 	let count = 0;
 	for (let i = 0; i < arr.length; i++) {
-		if (func(arr[i])) count++;
+		if (func(arr[i])) return true;
 	}
-	return count ? true : false;
+	return false;
 }

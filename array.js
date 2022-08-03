@@ -64,6 +64,24 @@ arr.filter((value) => value % 2 === 0); //method creates a shallow copy of a por
 arr.every(); //method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
 arr.some(); // method tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array.
 
+//Array map, flat, flatMap and filter methods
+//filter first then map
+array.map(); // method creates a new array populated with the results of calling a provided function on every element in the calling array.
+array.flat(); //method creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+array.flatMap(); //ethod returns a new array formed by applying a given callback function to each element of the array, and then flattening the result by one level. It is identical to a map() followed by a flat() of depth 1 (arr.map(...args).flat()), but slightly more efficient than calling those two methods separately.
+array.filter();
+
+//Manipulate array items in place not a new return array
+
+array.sort(); //method sorts the elements of an array in place and returns the reference to the same array, now sorted
+array.reverse(); //method reverses an array in place. The first array element becomes the last, and the last array element becomes the first.
+array.copyWithin(); //method shallow copies part of an array to another location in the same array and returns it without modifying its length.
+
+//Transform array into a single object
+
+array.reduce((acc, n) => {
+	return acc + n;
+}, 0);
 // indexOf
 
 function indexOf(array, value) {

@@ -14,7 +14,7 @@
 
 class Node {
 	constructor(value) {
-		this.right = value;
+		this.value = value;
 		this.left = null;
 		this.right = null;
 	}
@@ -67,7 +67,7 @@ class BST {
 	//else if > right
 	//return false
 
-	constains(value) {
+	contains(value) {
 		if (this.root === null) return false;
 		let temp = this.root;
 		while (temp) {
